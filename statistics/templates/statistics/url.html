@@ -1,0 +1,9 @@
+{% if error %}
+    <p><b>Failed to establish a new connection to: {{ url }}</b></p>
+{% endif %}
+
+<form action="{% url 'statistics:url' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>

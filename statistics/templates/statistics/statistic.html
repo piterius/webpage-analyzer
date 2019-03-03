@@ -1,0 +1,14 @@
+<h1> Statistic for {{ url }}</h1>
+
+{% if results %}
+    <p>Keyword: number of occurrences</p>
+    <ul>
+    {% for keyword, count in results %}
+        <li>{{ keyword }}: {{ count }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No keywords are available.</p>
+{% endif %}
+
+<a href="{% url 'statistics:url' %}">Enter new URL to check</a>
